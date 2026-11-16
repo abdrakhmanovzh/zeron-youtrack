@@ -1,0 +1,76 @@
+{
+  "id": "youtrack",
+  "name": "YouTrack",
+  "version": "0.1.0",
+  "description": "Your YouTrack issues on a page of their own: grouped by state, searched as you type, each opened beside the list with its description, pictures and comments, its state, priority, type, assignee and tags changeable there.",
+  "entry": "init.luau",
+  "permissions": [
+    "pages.add",
+    "panel.tabs",
+    "network",
+    "links.open"
+  ],
+  "network": {
+    "hosts": [
+      "*.youtrack.cloud",
+      "*.myjetbrains.com",
+      "support.cyber-net.ai"
+    ]
+  },
+  "settings_description": "Works as you, with a permanent token of yours. It writes to YouTrack only when you pick a state, priority, type, assignee or tag in an issue.",
+  "settings": [
+    {
+      "id": "base_url",
+      "kind": "text",
+      "section": "Connection",
+      "label": "YouTrack address",
+      "description": "Its root, without /api. YouTrack Cloud (*.youtrack.cloud, *.myjetbrains.com) works as is; a self-hosted one's host has to be added to network.hosts in the plugin's manifest (see its README).",
+      "placeholder": "https://yourteam.youtrack.cloud",
+      "default": ""
+    },
+    {
+      "id": "token",
+      "kind": "text",
+      "section": "Connection",
+      "label": "Permanent token",
+      "description": "YouTrack → Profile → Account Security → New token, scope YouTrack. Kept by Zeron for this plugin alone.",
+      "placeholder": "perm:…",
+      "default": ""
+    },
+    {
+      "id": "project",
+      "kind": "text",
+      "section": "Issues",
+      "label": "Project",
+      "description": "A project's short name, such as PROJ. Empty: every project.",
+      "placeholder": "PROJ",
+      "default": ""
+    },
+    {
+      "id": "extra_query",
+      "kind": "text",
+      "section": "Issues",
+      "label": "Extra query",
+      "description": "YouTrack search added to every list.",
+      "placeholder": "#Unresolved",
+      "default": "#Unresolved"
+    }
+  ],
+  "signature": {
+    "key": "q9OopdErfg0HmBz_CoH54HzeRCzBcK-C4G00LrAqb24",
+    "files": {
+      "LICENSE": "8240c2217f7924bf87dee2a7461d9ebe6f78782eb15152d7b3174a9d2384c0e3",
+      "README.md": "f349ef9b6eedcaaf2c568183c4f432b3aaf26196a42350f37320f1e4c9484a39",
+      "api.luau": "e8409bcb6312769b2d1a862e186ee03d2e8beafefb037157acafda069baa473a",
+      "board.luau": "dc643695d236eaced698458244fc84af16d0a09667d05ba6cb1e11b7f40c619c",
+      "bus.luau": "ab803979ed24fb8826c9f9687f5a8eef8ba0823337e8861863446c9527376d7c",
+      "cache.luau": "88a7e0cd0e01776537d1f38cc34cacb42210d642270d7ebc5985b9d95747ed85",
+      "init.luau": "7da2a2358136400fdd4703ef6f25e3cac64e6f50114064e4654a6d0ef7ad0849",
+      "locales/en.json": "12203034c88f417a65b83df3fa0bfdd9e3db4a8fe2ac3194df3dcbd9d26a513c",
+      "look.luau": "d82cabf635dbc4cd02dc5e4194e2a41a5fdce3a2596665e664e231300a4c80aa",
+      "viewer.luau": "3ffbec45b157f5030c707b72beac7297b52eb524c3ae906542c16da62cab0e72",
+      "zeron.luau": "0ef4194bdf34ac0f30315e783972fdc82c05d4269f22d885e15cb59430cb2cd7"
+    },
+    "sig": "fos5gwhzxcN468OIf77vzcvVo-r3KBfvGiQSb74t1qtToKmxD0pvDi9oMstEpsq8A3EKA5TyGmnz63B0KXigDQ"
+  }
+}

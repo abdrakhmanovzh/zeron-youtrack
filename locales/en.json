@@ -1,0 +1,54 @@
+{
+  "page": {
+    "title": "YouTrack"
+  },
+  "issue": {
+    "refresh": "Refresh",
+    "open": "Open in YouTrack",
+    "state": "State",
+    "priority": "Priority",
+    "type": "Type",
+    "assignee": "Assignee",
+    "reporter": "Reporter",
+    "tags": "Tags",
+    "created": "Created",
+    "updated": "Updated",
+    "none": "None",
+    "unassigned": "Unassigned",
+    "someone": "Someone",
+    "description": "Description",
+    "no_description": "No description.",
+    "comments": "Comments",
+    "add_tag": "Add tag",
+    "search_people": "Search people…",
+    "search_tags": "Search tags…",
+    "not_saved": "YouTrack didn't save that: {why}",
+    "options_failed": "Couldn't load the choices: {why}",
+    "failed": "Couldn't load this issue",
+    "try_again": "Try again"
+  },
+  "board": {
+    "title": "Issues",
+    "refresh": "Refresh",
+    "filter": "Which issues",
+    "filters": {
+      "assigned": "Assigned to me",
+      "reported": "Reported by me",
+      "all": "All"
+    },
+    "search": "Filter issues",
+    "count": "{n, plural, one {# issue} other {# issues}}",
+    "unassigned": "Unassigned",
+    "no_state": "No state",
+    "failed_title": "YouTrack didn't answer",
+    "try_again": "Try again",
+    "empty": {
+      "setup_title": "Connect YouTrack",
+      "setup_body": "Add your YouTrack's address and a permanent token in Settings → Plugins → YouTrack. It reads issues, and changes only an issue's state, priority, type, assignee and tags when you pick them.",
+      "none_title": "No issues here",
+      "none_body": "Nothing matches this list right now.",
+      "nomatch_title": "Nothing matches “{q}”",
+      "nomatch_body": "Try other words."
+    }
+  }
+}
