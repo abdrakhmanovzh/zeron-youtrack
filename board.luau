@@ -475,15 +475,23 @@ return function(zeron: any, api: any, cache: any): (props: { panel: any? }) -> N
 							return not narrow()
 						end, ui.row { gap = "$space.1", shrink = 0, items = "center", table.unpack(tags) })
 						else nil,
-					ui.row {
-						w = 20,
-						shrink = 0,
-						justify = "center",
-						tooltip = if issue.assignee then issue.assignee.name else zeron.s("board.unassigned"),
-						if issue.assignee
-							then Initials(issue.assignee)
-							else ui.div { w = 16, h = 16, rounded = "$radius.full", border = 1, border_color = "$border" },
-					},
+					-- Who it's assigned to: not on "Assigned to me", where it's
+					-- always you. (Followed, not decided as the row is built: a
+					-- row is kept by its issue across tabs.)
+					ui.show(
+						function(): boolean
+							return filter_value:get() ~= "assigned"
+						end,
+						ui.row {
+							w = 20,
+							shrink = 0,
+							justify = "center",
+							tooltip = if issue.assignee then issue.assignee.name else zeron.s("board.unassigned"),
+							if issue.assignee
+								then Initials(issue.assignee)
+								else ui.div { w = 16, h = 16, rounded = "$radius.full", border = 1, border_color = "$border" },
+						}
+					),
 					ui.show(function(): boolean
 						return not narrow()
 					end, Text { short_date(issue.updated), style = "caption", tone = "tertiary", w = 56, shrink = 0, align = "right", tabular = true }),
